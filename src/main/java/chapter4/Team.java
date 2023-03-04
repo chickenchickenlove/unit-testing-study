@@ -9,8 +9,4 @@ public class Team {
     public List<Player> getPlayers() {
         return players;
     }
-
-
-
-
 }

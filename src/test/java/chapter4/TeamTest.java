@@ -12,16 +12,25 @@ class TeamTest {
 
 
     @Test
-    void testGetPlayerList() {
+    void testGetPlayerListBad() {
 
-        Team team = new Team();
+        Team sut = new Team();
 
-        List<Player> players = team.getPlayers();
+        List<Player> players = sut.getPlayers();
 
         assertThat(players.get(0)).isInstanceOf(BaseBallPlayer.class);
         assertThat(players.get(1)).isInstanceOf(FootBallPlayer.class);
         assertThat(players.get(2)).isInstanceOf(SoccerPlayer.class);
     }
 
+    @Test
+    void testGetPlayerListGood() {
+
+        Team sut = new Team();
+
+        List<Player> players = sut.getPlayers();
+
+        assertThat(players).isNotNull();
+    }
 
 }
