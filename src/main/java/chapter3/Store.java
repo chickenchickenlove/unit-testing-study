@@ -21,4 +21,9 @@ public class Store {
         return inventory.get(item);
     }
 
+    public boolean hasEnoughInventory(String itemName, int count) {
+        // TODO : Implementation
+        return false;
+    }
+
 }

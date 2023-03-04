@@ -2,9 +2,11 @@ package chapter3;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 class CustomerTest {
 
@@ -25,6 +27,20 @@ class CustomerTest {
         assertThat(success).isTrue();
         assertThat(store.getInventory(item)).isEqualTo(5);
     }
+
+    @Test
+    void purchaseFailsWhenNotEnoughInventory() {
+
+        // mock
+        Store store = spy(Store.class);
+        when(store.hasEnoughInventory("shampoo", 5)).thenReturn(false);
+        Customer sut = new Customer();
+
+        sut.purchase(store, "shampoo", 5);
+
+        verify(store, never()).removeInventory("shampoo", 5);
+    }
+
 
     @Test
     void purchaseSucceedsWhenEnoughInventoryBadCase() {
