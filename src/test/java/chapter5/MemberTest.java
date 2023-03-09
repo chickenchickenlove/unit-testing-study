@@ -1,11 +1,7 @@
-package chatper5;
+package chapter5;
 
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
-import org.mockito.internal.verification.Times;
-import org.mockito.verification.VerificationMode;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 class MemberTest {

@@ -1,4 +1,4 @@
-package chatper5;
+package chapter5;
 
 public class UserRepository {
 

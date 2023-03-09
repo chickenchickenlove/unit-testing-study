@@ -1,4 +1,4 @@
-package chatper5;
+package chapter5;
 
 import org.junit.jupiter.api.Test;
 

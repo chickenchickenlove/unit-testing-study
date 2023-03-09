@@ -1,4 +1,4 @@
-package chatper5.good;
+package chapter5.good;
 
 public class UserEntity {
 
